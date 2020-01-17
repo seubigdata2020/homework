@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+    <script src="china.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 1200px;height:800px;"></div>
+    <script type="text/javascript">
+    	var mydata = [  
+                {name: '北京',value: '21710000' },{name: '天津',value: '15600000' },  
+                {name: '上海',value: '24240000' },{name: '重庆',value: '30490000' },  
+                {name: '河北',value: '75560000' },{name: '河南',value: '96050000' },  
+                {name: '云南',value: '48000000' },{name: '辽宁',value: '43590000' },  
+                {name: '黑龙江',value: '37880000' },{name: '湖南',value: '68600000' },  
+                {name: '安徽',value: '63240000' },{name: '山东',value: '100470000' },  
+                {name: '新疆',value: '24450000' },{name: '江苏',value: '80290000' },  
+                {name: '浙江',value: '57370000' },{name: '江西',value: '46220000' },  
+                {name: '湖北',value: '59170000' },{name: '广西',value: '48850000' },  
+                {name: '甘肃',value: '26260000' },{name: '山西',value: '37020000' },  
+                {name: '内蒙古',value: '25340000' },{name: '陕西',value: '38350000' },  
+                {name: '吉林',value: '27180000' },{name: '福建',value: '39410000' },  
+                {name: '贵州',value: '35800000' },{name: '广东',value: '113460000' },  
+                {name: '青海',value: '5980000' },{name: '西藏',value: '3370000' },  
+                {name: '四川',value: '83410000' },{name: '宁夏',value: '6810000' },  
+                {name: '海南',value: '9260000' },{name: '台湾',value: '2369' },  
+                {name: '香港',value: '7480000' },{name: '澳门',value: '630000' }  
+            ]; 
+        var optionMap = {  
+                backgroundColor: '#FFFFFF',  
+                title: {  
+                    text: '全国各省份人口',  
+                    subtext: '',  
+                    x:'center'  
+                },  
+                tooltip : {  
+                    trigger: 'item'  
+                },  
+                
+                //左侧小导航图标
+                visualMap: {  
+                    show : true,  
+                    x: 'left',  
+                    y: 'center',  
+                    splitList: [   
+                        {start: 80000000, end:150000000},{start: 60000000, end: 80000000},  
+                        {start: 40000000, end: 60000000},{start: 20000000, end: 40000000},  
+                        {start: 10000000, end: 20000000},{start: 0, end: 10000000},  
+                    ],  
+                    color: ['#5475f5', '#9feaa5', '#85daef','#74e2ca', '#e6ac53', '#9fb5ea']  
+                },  
+                
+                //配置属性
+                series: [{  
+                    name: '数据',  
+                    type: 'map',  
+                    mapType: 'china',   
+                    roam: true,  
+                    label: {  
+                        normal: {  
+                            show: true  //省份名称  
+                        },  
+                        emphasis: {  
+                            show: false  
+                        }  
+                    },  
+                    data:mydata  //数据
+                }]  
+            };  
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(optionMap);
+    </script>
+</body>
+</html>
