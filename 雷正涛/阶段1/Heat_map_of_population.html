@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script src="echarts.js"></script>
+    <script src="china.js"></script>
+    <style>
+        *{margin:0;padding:0}
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        #main{
+              width:800px;
+              height:600px;
+              margin: 150px auto;
+              border:1px solid #ddd;
+          }
+    </style>
+</head>
+<body>
+    <div id="main">
+ 
+    </div>
+    <script type="text/javascript">
+        var dataList=[
+{name:"北京",value:19612368},
+{name:"天津",value:12938693},
+{name:"河北",value:71854210},
+{name:"山西",value:35712101},
+{name:"内蒙古",value:24706291},
+{name:"辽宁",value:43746323},
+{name:"吉林",value:27452815},
+{name:"黑龙江",value:38313991},
+{name:"上海",value:23019196},
+{name:"江苏",value:78660941},
+{name:"浙江",value:54426891},
+{name:"安徽",value:59500468},
+{name:"福建",value:36894217},
+{name:"江西",value:44567797},
+{name:"山东",value:95792719},
+{name:"河南",value:94029939},
+{name:"湖北",value:57237727},
+{name:"湖南",value:65700762},
+{name:"广东",value:104320459},
+{name:"广西",value:46023761},
+{name:"海南",value:8671485},
+{name:"重庆",value:28846170},
+{name:"四川",value:80417528},
+{name:"贵州",value:34748556},
+{name:"云南",value:45966766},
+{name:"西藏",value:3002165},
+{name:"陕西",value:37327379},
+{name:"甘肃",value:25575263},
+{name:"青海",value:5626723},
+{name:"宁夏",value:6301350},
+{name:"新疆",value:21815815}
+]
+       
+        var myChart = echarts.init(document.getElementById('main'));
+        function randomValue() {
+            return Math.round(Math.random()*1000);
+        }
+        option = {
+            title: {
+                text: '中国人口数量分布图',
+                x:'center',
+                y:'top',
+                textAlign:'left'
+            },
+            tooltip: {
+                    formatter:function(params,ticket, callback){
+                        return params.seriesName+'<br />'+params.name+'：'+params.value
+                    }
+                },
+            visualMap: {
+                min: 0,
+                max: 80000000,
+                left: 'left',
+                top: 'bottom',
+                text: ['高','低'],//取值范围的文字
+                show:true//图注
+            },
+            geo: {
+                map: 'china',
+                roam: true,//开启缩放和平移
+                zoom:1.23,//视角缩放比例
+                label: {
+                    normal: {
+                        show: true,
+                        fontSize:'10',
+                        color: 'rgba(0,0,0,0.7)'
+                    }
+                },
+                itemStyle: {
+                    normal:{
+                        borderColor: 'rgba(0, 0, 0, 0.2)'
+                    },
+                    emphasis:{
+                        areaColor: '#F3B329',//鼠标选择区域颜色
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        shadowBlur: 20,
+                        borderWidth: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+            series : [
+                {
+                    name: '人口数量',
+                    type: 'map',
+                    geoIndex: 0,
+                    data:dataList
+                }
+            ]
+        };
+        myChart.setOption(option);
+        myChart.on('click', function (params) {
+            alert(params.name);
+        });
+
+    </script>
+</body>
+</html>
