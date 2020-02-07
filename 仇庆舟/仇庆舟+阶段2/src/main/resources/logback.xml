@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <contextName>logback-4001</contextName>
+    <jmxConfigurator />
+    <!-- 日志路径 -->
+    <property name="LOG_HOME" value=" /home" />
+
+    <!-- console控制台日志 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <!-- 程序运行日志记录-3天-->
+    <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/info/spirit-info-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <MaxHistory>3</MaxHistory>  <!--保存天数  -->
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n </pattern>
+        </layout>
+    </appender>
+
+    <!-- 错误日志记录-15天 -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/error/spirit-error-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <MaxHistory>15</MaxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n </pattern>
+        </layout>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="stdout" />
+        <appender-ref ref="ERROR_FILE" />
+        <appender-ref ref="INFO_FILE" />
+    </root>
+
+</configuration>
