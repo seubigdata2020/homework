@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--debug属性配置是否打印日志框架本身的运行情况信息-->
+<configuration debug="false">
+    <!--自定义日志存放目录-->
+    <property name="LOG_HOME" value="src/log/" />
+
+    <!--控制台输出日志-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%highlight(%d{yyyy-MM-dd HH:mm}) %boldYellow([%thread]) %-5level  %boldCyan([%logger{50}[%L]]) %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--INFO日志文件输出-->
+    <appender name="FILE_INFO"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--当前日志输出文件位置，目录不存在时会自动创建-->
+        <file>${LOG_HOME}/INFO.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--每天滚动，满足条件时滚动生成的文件名格式-->
+            <fileNamePattern>${LOG_HOME}/service.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!--该日志的最大数量-->
+            <MaxHistory>120</MaxHistory>
+            <!--按文件大小滚动，当某一天的日志文件大于100m时滚动，生成一个新的文件来存放日志，结合上面的每天滚动一起使用，可以避免日志文件过大不利于查找-->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!--日志输出格式，编码以及信息格式-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm} [%thread] %-5level %logger{50}[%L] - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--ERROR日志文件输出-->
+    <appender name="FILE_ERROR"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/ERROR.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <MaxHistory>120</MaxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!-- 过滤日志，只输出error等级的日志-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50}[%L] - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!--DRUID日志输出-->
+    <appender name="FILE_DRUID" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 正在记录的日志文件的路径及文件名 -->
+        <file>${LOG_HOME}/DRUID.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${APPDIR}/info/log-druid-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!-- 追加方式记录日志 -->
+        <append>true</append>
+        <!-- 日志文件的格式 -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger Line:%-3L - %msg%n</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+        <!-- 过滤日志-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+    <!--druid自己的监控日志实现类-->
+    <logger name="com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE_DRUID"/>
+    </logger>
+
+
+    <!--logger用来配置绑定某个包或者类下的日志输出等级，以及使用哪一个appender来输出日志-->
+    <!--additivity配置是否向上级logger传递打印信息行为，该logger的上级为root，默认true-->
+    <!--我的实现类-->
+    <logger name="com.lane.controller" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE_DRUID"/>
+    </logger>
+
+
+    <!--顶级logger-->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE_INFO" />
+        <appender-ref ref="FILE_ERROR" />
+    </root>
+
+
+</configuration>

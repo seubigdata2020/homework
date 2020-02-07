@@ -1,0 +1,68 @@
+2020-02-07 12:00:08 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, poolingPeak=5, poolingPeakTime=Fri Feb 07 12:00:08 CST 2020, connectCount=0, closeCount=0, physicalConnectCount=5}
+2020-02-07 12:00:09 INFO  com.lane.controller.JDBCController Line:26  - 显示数据库表的内容
+2020-02-07 12:00:11 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {执行了sql语句： =select * from user}
+2020-02-07 12:00:14 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:17 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:20 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:23 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:26 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:29 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:32 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:35 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:38 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:41 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:43 INFO  com.lane.controller.JDBCController Line:46  - 增加id为33的用户成功
+2020-02-07 12:00:44 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {执行了sql语句： =INSERT INTO jdbc.user(name, id, password)
+VALUES (?, ?, ?)}
+2020-02-07 12:00:47 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:50 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:53 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:56 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:00:59 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:02 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:05 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:08 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:11 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:14 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:17 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:20 INFO  com.lane.controller.JDBCController Line:66  - 刪除id为3的用户成功
+2020-02-07 12:01:20 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {执行了sql语句： =delete from jdbc.user where id=?}
+2020-02-07 12:01:23 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:26 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:29 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:32 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:35 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:38 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:41 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:44 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:47 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:50 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:53 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:56 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:01:59 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:02 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:05 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:08 INFO  com.lane.controller.JDBCController Line:57  - 更新id为1的用户成功
+2020-02-07 12:02:08 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {执行了sql语句： =UPDATE jdbc.user
+SET name = ?, password = ?
+WHERE id = ?}
+2020-02-07 12:02:11 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:14 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:18 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:18 INFO  com.lane.controller.JDBCController Line:35  - 查找id为1的用户
+2020-02-07 12:02:21 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {执行了sql语句： =SELECT *
+FROM user
+WHERE id = ?}
+2020-02-07 12:02:24 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:25 INFO  com.lane.controller.JDBCController Line:35  - 查找id为2的用户
+2020-02-07 12:02:27 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {执行了sql语句： =SELECT *
+FROM user
+WHERE id = ?}
+2020-02-07 12:02:30 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:02:33 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1515139694, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
+2020-02-07 12:10:28 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1099264744, activeCount=0, poolingCount=5, poolingPeak=5, poolingPeakTime=Fri Feb 07 12:10:28 CST 2020, connectCount=0, closeCount=0, physicalConnectCount=5}
+2020-02-07 12:10:28 INFO  com.lane.controller.JDBCController Line:35  - 查找id为2的用户
+2020-02-07 12:10:31 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {执行了sql语句： =SELECT *
+FROM user
+WHERE id = ?}
+2020-02-07 12:10:34 INFO  com.alibaba.druid.pool.DruidDataSourceStatLoggerImpl Line:54  - {dbType=mysql, name=DataSource-1099264744, activeCount=0, poolingCount=5, connectCount=0, closeCount=0}
